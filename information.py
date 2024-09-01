@@ -14,7 +14,7 @@ class Information_package:
 
 
 class File_package:
-    def example_main():
+    def main():
         print('start fumct')
         with open('setup.list','r') as file:
             lines = file.readlines()
@@ -33,4 +33,4 @@ class File_package:
 
         print('end fumct')
 
-File_package.example_main()
+File_package.main()
