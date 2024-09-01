@@ -1,3 +1,7 @@
+import os
+
+import print_user
+
 class Information_package:
     def main():
         with open('information', 'r') as file:
@@ -25,12 +29,11 @@ class File_package:
         index_output = 0
         while index_input > index_output:
             if index_input >= index_output:
-                name_and_file = lines[index_output]
-                with open('setup_cashe/file/' + name_and_file, 'a') as file:
-                    file.write(name_and_file)
-                    index_output += 1
-                    continue
-
+                name = lines[index_output]
+                with open('setup_cashe/file' ,'w') as fp:
+                    fp.write(name)
+                print_user.main()
+                index_output += 1
         print('end fumct')
 
 File_package.main()
