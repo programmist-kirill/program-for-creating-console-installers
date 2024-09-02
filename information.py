@@ -16,12 +16,13 @@ class Information_package:
         with open('setup_cashe/package/url_package.txt', 'w') as url_package:
             url_package.write(lines[2])
 
+        print_user.dowloaded_package.main()
 
 class File_package:
     def main():
         print('start fumct')
-        with open('setup.list','r') as file:
-            lines = file.readlines()
+        with open('setup.list', 'r') as file:
+            lines = file.read().split('\n')
         #index = количество строк в файле setup.list
         index_input = len(lines)
         index_input = int(index_input)
@@ -31,9 +32,17 @@ class File_package:
                 name = lines[index_output]
                 with open('setup_cashe/file' ,'w') as fp:
                     fp.write(name)
-                print_user.main(name)
+                print_user.copy_package.main(name)
                 
                 index_output += 1
         print('end fumct')
 
+
+class Install_package:
+    def main(name_package):
+        print_user.install_package.main(name_package)
+
+
+Information_package.main()
 File_package.main()
+Install_package.main(name_package)
